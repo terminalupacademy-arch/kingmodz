@@ -39,10 +39,32 @@
             box-shadow: 0 20px 30px -12px rgba(37, 99, 235, 0.15);
         }
 
-        .mod-card img {
+        /* Perbaikan ukuran gambar */
+        .mod-card .icon-container {
+            width: 100%;
+            height: 128px; /* h-32 = 8rem = 128px */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(145deg, #f0f9ff, #ffffff);
+            border-radius: 1rem; /* rounded-2xl */
+            overflow: hidden;
+            padding: 1rem;
+        }
+
+        .mod-card .icon-container img {
             max-width: 100%;
+            max-height: 100%;
+            width: auto;
             height: auto;
             object-fit: contain;
+            display: block;
+            margin: 0 auto;
+            transition: transform 0.2s ease;
+        }
+
+        .mod-card:hover .icon-container img {
+            transform: scale(1.05);
         }
 
         .btn-king {
@@ -116,6 +138,13 @@
             backdrop-filter: blur(15px);
             border-radius: 28px;
             border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+
+        /* Responsive grid */
+        @media (max-width: 640px) {
+            .mod-card .icon-container {
+                height: 96px; /* lebih kecil di mobile */
+            }
         }
     </style>
 </head>
@@ -255,15 +284,15 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             <!-- CARD 1 - Classical Guitar HD -->
             <div class="mod-card p-5">
-                <div class="bg-gradient-to-br from-amber-100 to-blue-50 h-32 rounded-2xl flex items-center justify-center mb-4">
-                    <img src="images/classical-guitar-hd.jpg" alt="Classical Guitar HD Icon" class="w-20 h-20 object-contain">
+                <div class="icon-container">
+                    <img src="images/classical-guitar-hd.jpg" alt="Classical Guitar HD Icon">
                 </div>
-                <h3 class="font-bold text-xl text-blue-900">Classical Guitar HD Mod</h3>
+                <h3 class="font-bold text-xl text-blue-900 mt-4">Classical Guitar HD Mod</h3>
                 <div class="flex items-center gap-2 mt-1">
                     <span class="text-xs bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Music</span>
                     <span class="text-xs text-gray-500">v3.2.1</span>
                 </div>
-                <p class="text-sm text-gray-600 mt-3">Premium classical guitar lessons, all songs unlocked, HD quality.</p>
+                <p class="text-sm text-gray-600 mt-3 line-clamp-2">Premium classical guitar lessons, all songs unlocked, HD quality.</p>
                 <div class="flex items-center justify-between mt-4">
                     <div class="flex items-center gap-1 text-yellow-500">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
@@ -278,15 +307,15 @@
 
             <!-- CARD 2 - Com Elespanol -->
             <div class="mod-card p-5">
-                <div class="bg-gradient-to-br from-red-100 to-blue-50 h-32 rounded-2xl flex items-center justify-center mb-4">
-                    <img src="images/com-elespanol.jpg" alt="Com Elespanol Icon" class="w-20 h-20 object-contain">
+                <div class="icon-container">
+                    <img src="images/com-elespanol.jpg" alt="Com Elespanol Icon">
                 </div>
-                <h3 class="font-bold text-xl text-blue-900">Com Elespanol Mod</h3>
+                <h3 class="font-bold text-xl text-blue-900 mt-4">Com Elespanol Mod</h3>
                 <div class="flex items-center gap-2 mt-1">
                     <span class="text-xs bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Education</span>
                     <span class="text-xs text-gray-500">v2.5.0</span>
                 </div>
-                <p class="text-sm text-gray-600 mt-3">Learn Spanish with premium lessons, no ads, all content unlocked.</p>
+                <p class="text-sm text-gray-600 mt-3 line-clamp-2">Learn Spanish with premium lessons, no ads, all content unlocked.</p>
                 <div class="flex items-center justify-between mt-4">
                     <div class="flex items-center gap-1 text-yellow-500">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
@@ -301,15 +330,15 @@
 
             <!-- CARD 3 - Crossword Free Collection -->
             <div class="mod-card p-5">
-                <div class="bg-gradient-to-br from-emerald-100 to-blue-50 h-32 rounded-2xl flex items-center justify-center mb-4">
-                    <img src="images/crossword-free-collection.jpg" alt="Crossword Free Collection Icon" class="w-20 h-20 object-contain">
+                <div class="icon-container">
+                    <img src="images/crossword-free-collection.jpg" alt="Crossword Free Collection Icon">
                 </div>
-                <h3 class="font-bold text-xl text-blue-900">Crossword Free Collection</h3>
+                <h3 class="font-bold text-xl text-blue-900 mt-4">Crossword Free Collection</h3>
                 <div class="flex items-center gap-2 mt-1">
                     <span class="text-xs bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Puzzle</span>
                     <span class="text-xs text-gray-500">v4.1.2</span>
                 </div>
-                <p class="text-sm text-gray-600 mt-3">All puzzle packs unlocked, unlimited hints, no ads.</p>
+                <p class="text-sm text-gray-600 mt-3 line-clamp-2">All puzzle packs unlocked, unlimited hints, no ads.</p>
                 <div class="flex items-center justify-between mt-4">
                     <div class="flex items-center gap-1 text-yellow-500">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
@@ -324,15 +353,15 @@
 
             <!-- CARD 4 - Famous Landmarks -->
             <div class="mod-card p-5">
-                <div class="bg-gradient-to-br from-sky-100 to-blue-50 h-32 rounded-2xl flex items-center justify-center mb-4">
-                    <img src="images/famous-landmarks.jpg" alt="Famous Landmarks Icon" class="w-20 h-20 object-contain">
+                <div class="icon-container">
+                    <img src="images/famous-landmarks.jpg" alt="Famous Landmarks Icon">
                 </div>
-                <h3 class="font-bold text-xl text-blue-900">Famous Landmarks Mod</h3>
+                <h3 class="font-bold text-xl text-blue-900 mt-4">Famous Landmarks Mod</h3>
                 <div class="flex items-center gap-2 mt-1">
                     <span class="text-xs bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Education</span>
                     <span class="text-xs text-gray-500">v1.8.3</span>
                 </div>
-                <p class="text-sm text-gray-600 mt-3">All landmarks unlocked, HD images, premium content free.</p>
+                <p class="text-sm text-gray-600 mt-3 line-clamp-2">All landmarks unlocked, HD images, premium content free.</p>
                 <div class="flex items-center justify-between mt-4">
                     <div class="flex items-center gap-1 text-yellow-500">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
@@ -347,15 +376,15 @@
 
             <!-- CARD 5 - Internxt Cloud Storage -->
             <div class="mod-card p-5">
-                <div class="bg-gradient-to-br from-indigo-100 to-blue-50 h-32 rounded-2xl flex items-center justify-center mb-4">
-                    <img src="images/internxt-secure-cloud-storage.jpg" alt="Internxt Icon" class="w-20 h-20 object-contain">
+                <div class="icon-container">
+                    <img src="images/internxt-secure-cloud-storage.jpg" alt="Internxt Icon">
                 </div>
-                <h3 class="font-bold text-xl text-blue-900">Internxt Cloud Storage</h3>
+                <h3 class="font-bold text-xl text-blue-900 mt-4">Internxt Cloud Storage</h3>
                 <div class="flex items-center gap-2 mt-1">
                     <span class="text-xs bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Productivity</span>
                     <span class="text-xs text-gray-500">v2.1.5</span>
                 </div>
-                <p class="text-sm text-gray-600 mt-3">Unlimited storage, premium features unlocked, secure cloud.</p>
+                <p class="text-sm text-gray-600 mt-3 line-clamp-2">Unlimited storage, premium features unlocked, secure cloud.</p>
                 <div class="flex items-center justify-between mt-4">
                     <div class="flex items-center gap-1 text-yellow-500">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
@@ -370,15 +399,15 @@
 
             <!-- CARD 6 - Latin Chords -->
             <div class="mod-card p-5">
-                <div class="bg-gradient-to-br from-yellow-100 to-blue-50 h-32 rounded-2xl flex items-center justify-center mb-4">
-                    <img src="images/latin-chords.jpg" alt="Latin Chords Icon" class="w-20 h-20 object-contain">
+                <div class="icon-container">
+                    <img src="images/latin-chords.jpg" alt="Latin Chords Icon">
                 </div>
-                <h3 class="font-bold text-xl text-blue-900">Latin Chords Mod</h3>
+                <h3 class="font-bold text-xl text-blue-900 mt-4">Latin Chords Mod</h3>
                 <div class="flex items-center gap-2 mt-1">
                     <span class="text-xs bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Music</span>
                     <span class="text-xs text-gray-500">v3.4.0</span>
                 </div>
-                <p class="text-sm text-gray-600 mt-3">All chord libraries unlocked, premium lessons, no ads.</p>
+                <p class="text-sm text-gray-600 mt-3 line-clamp-2">All chord libraries unlocked, premium lessons, no ads.</p>
                 <div class="flex items-center justify-between mt-4">
                     <div class="flex items-center gap-1 text-yellow-500">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
@@ -393,15 +422,15 @@
 
             <!-- CARD 7 - Mosalingua English -->
             <div class="mod-card p-5">
-                <div class="bg-gradient-to-br from-blue-100 to-indigo-50 h-32 rounded-2xl flex items-center justify-center mb-4">
-                    <img src="images/mosalingua-english.jpg" alt="Mosalingua English Icon" class="w-20 h-20 object-contain">
+                <div class="icon-container">
+                    <img src="images/mosalingua-english.jpg" alt="Mosalingua English Icon">
                 </div>
-                <h3 class="font-bold text-xl text-blue-900">Mosalingua English</h3>
+                <h3 class="font-bold text-xl text-blue-900 mt-4">Mosalingua English</h3>
                 <div class="flex items-center gap-2 mt-1">
                     <span class="text-xs bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Education</span>
                     <span class="text-xs text-gray-500">v8.2.1</span>
                 </div>
-                <p class="text-sm text-gray-600 mt-3">All premium courses unlocked, no ads, full access.</p>
+                <p class="text-sm text-gray-600 mt-3 line-clamp-2">All premium courses unlocked, no ads, full access.</p>
                 <div class="flex items-center justify-between mt-4">
                     <div class="flex items-center gap-1 text-yellow-500">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
@@ -416,15 +445,15 @@
 
             <!-- CARD 8 - Pool Stars -->
             <div class="mod-card p-5">
-                <div class="bg-gradient-to-br from-teal-100 to-blue-50 h-32 rounded-2xl flex items-center justify-center mb-4">
-                    <img src="images/pool-stars.jpg" alt="Pool Stars Icon" class="w-20 h-20 object-contain">
+                <div class="icon-container">
+                    <img src="images/pool-stars.jpg" alt="Pool Stars Icon">
                 </div>
-                <h3 class="font-bold text-xl text-blue-900">Pool Stars Mod</h3>
+                <h3 class="font-bold text-xl text-blue-900 mt-4">Pool Stars Mod</h3>
                 <div class="flex items-center gap-2 mt-1">
                     <span class="text-xs bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Game</span>
                     <span class="text-xs text-gray-500">v1.9.4</span>
                 </div>
-                <p class="text-sm text-gray-600 mt-3">Unlimited coins, all tables unlocked, premium cues free.</p>
+                <p class="text-sm text-gray-600 mt-3 line-clamp-2">Unlimited coins, all tables unlocked, premium cues free.</p>
                 <div class="flex items-center justify-between mt-4">
                     <div class="flex items-center gap-1 text-yellow-500">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
@@ -439,15 +468,15 @@
 
             <!-- CARD 9 - Pou -->
             <div class="mod-card p-5">
-                <div class="bg-gradient-to-br from-orange-100 to-yellow-50 h-32 rounded-2xl flex items-center justify-center mb-4">
-                    <img src="images/pou.jpg" alt="Pou Icon" class="w-20 h-20 object-contain">
+                <div class="icon-container">
+                    <img src="images/pou.jpg" alt="Pou Icon">
                 </div>
-                <h3 class="font-bold text-xl text-blue-900">Pou Mod</h3>
+                <h3 class="font-bold text-xl text-blue-900 mt-4">Pou Mod</h3>
                 <div class="flex items-center gap-2 mt-1">
                     <span class="text-xs bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Game</span>
                     <span class="text-xs text-gray-500">v1.4.8</span>
                 </div>
-                <p class="text-sm text-gray-600 mt-3">Unlimited coins, all outfits unlocked, no ads.</p>
+                <p class="text-sm text-gray-600 mt-3 line-clamp-2">Unlimited coins, all outfits unlocked, no ads.</p>
                 <div class="flex items-center justify-between mt-4">
                     <div class="flex items-center gap-1 text-yellow-500">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
@@ -462,15 +491,15 @@
 
             <!-- CARD 10 - Pure Video Downloader -->
             <div class="mod-card p-5">
-                <div class="bg-gradient-to-br from-violet-100 to-blue-50 h-32 rounded-2xl flex items-center justify-center mb-4">
-                    <img src="images/pure-video-downloader.jpg" alt="Pure Video Downloader Icon" class="w-20 h-20 object-contain">
+                <div class="icon-container">
+                    <img src="images/pure-video-downloader.jpg" alt="Pure Video Downloader Icon">
                 </div>
-                <h3 class="font-bold text-xl text-blue-900">Pure Video Downloader</h3>
+                <h3 class="font-bold text-xl text-blue-900 mt-4">Pure Video Downloader</h3>
                 <div class="flex items-center gap-2 mt-1">
                     <span class="text-xs bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Tools</span>
                     <span class="text-xs text-gray-500">v3.0.2</span>
                 </div>
-                <p class="text-sm text-gray-600 mt-3">Premium features unlocked, unlimited downloads, no ads.</p>
+                <p class="text-sm text-gray-600 mt-3 line-clamp-2">Premium features unlocked, unlimited downloads, no ads.</p>
                 <div class="flex items-center justify-between mt-4">
                     <div class="flex items-center gap-1 text-yellow-500">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
@@ -485,15 +514,15 @@
 
             <!-- CARD 11 - Qustodio -->
             <div class="mod-card p-5">
-                <div class="bg-gradient-to-br from-cyan-100 to-blue-50 h-32 rounded-2xl flex items-center justify-center mb-4">
-                    <img src="images/qustodio.jpg" alt="Qustodio Icon" class="w-20 h-20 object-contain">
+                <div class="icon-container">
+                    <img src="images/qustodio.jpg" alt="Qustodio Icon">
                 </div>
-                <h3 class="font-bold text-xl text-blue-900">Qustodio Mod</h3>
+                <h3 class="font-bold text-xl text-blue-900 mt-4">Qustodio Mod</h3>
                 <div class="flex items-center gap-2 mt-1">
                     <span class="text-xs bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Parental Control</span>
                     <span class="text-xs text-gray-500">v5.1.3</span>
                 </div>
-                <p class="text-sm text-gray-600 mt-3">Premium parental control unlocked, all features free.</p>
+                <p class="text-sm text-gray-600 mt-3 line-clamp-2">Premium parental control unlocked, all features free.</p>
                 <div class="flex items-center justify-between mt-4">
                     <div class="flex items-center gap-1 text-yellow-500">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
@@ -508,15 +537,15 @@
 
             <!-- CARD 12 - Renfe -->
             <div class="mod-card p-5">
-                <div class="bg-gradient-to-br from-rose-100 to-blue-50 h-32 rounded-2xl flex items-center justify-center mb-4">
-                    <img src="images/renfe.jpg" alt="Renfe Icon" class="w-20 h-20 object-contain">
+                <div class="icon-container">
+                    <img src="images/renfe.jpg" alt="Renfe Icon">
                 </div>
-                <h3 class="font-bold text-xl text-blue-900">Renfe Mod</h3>
+                <h3 class="font-bold text-xl text-blue-900 mt-4">Renfe Mod</h3>
                 <div class="flex items-center gap-2 mt-1">
                     <span class="text-xs bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Travel</span>
                     <span class="text-xs text-gray-500">v4.2.0</span>
                 </div>
-                <p class="text-sm text-gray-600 mt-3">Premium features unlocked, no ads, all tickets access.</p>
+                <p class="text-sm text-gray-600 mt-3 line-clamp-2">Premium features unlocked, no ads, all tickets access.</p>
                 <div class="flex items-center justify-between mt-4">
                     <div class="flex items-center gap-1 text-yellow-500">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
@@ -531,15 +560,15 @@
 
             <!-- CARD 13 - Rocket Languages -->
             <div class="mod-card p-5">
-                <div class="bg-gradient-to-br from-fuchsia-100 to-blue-50 h-32 rounded-2xl flex items-center justify-center mb-4">
-                    <img src="images/rocket-languages.jpg" alt="Rocket Languages Icon" class="w-20 h-20 object-contain">
+                <div class="icon-container">
+                    <img src="images/rocket-languages.jpg" alt="Rocket Languages Icon">
                 </div>
-                <h3 class="font-bold text-xl text-blue-900">Rocket Languages</h3>
+                <h3 class="font-bold text-xl text-blue-900 mt-4">Rocket Languages</h3>
                 <div class="flex items-center gap-2 mt-1">
                     <span class="text-xs bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Education</span>
                     <span class="text-xs text-gray-500">v3.5.1</span>
                 </div>
-                <p class="text-sm text-gray-600 mt-3">All language courses unlocked, premium features free.</p>
+                <p class="text-sm text-gray-600 mt-3 line-clamp-2">All language courses unlocked, premium features free.</p>
                 <div class="flex items-center justify-between mt-4">
                     <div class="flex items-center gap-1 text-yellow-500">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
@@ -554,15 +583,15 @@
 
             <!-- CARD 14 - RTVE Play -->
             <div class="mod-card p-5">
-                <div class="bg-gradient-to-br from-purple-100 to-blue-50 h-32 rounded-2xl flex items-center justify-center mb-4">
-                    <img src="images/rtve-play.jpg" alt="RTVE Play Icon" class="w-20 h-20 object-contain">
+                <div class="icon-container">
+                    <img src="images/rtve-play.jpg" alt="RTVE Play Icon">
                 </div>
-                <h3 class="font-bold text-xl text-blue-900">RTVE Play Mod</h3>
+                <h3 class="font-bold text-xl text-blue-900 mt-4">RTVE Play Mod</h3>
                 <div class="flex items-center gap-2 mt-1">
                     <span class="text-xs bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Streaming</span>
                     <span class="text-xs text-gray-500">v6.4.1</span>
                 </div>
-                <p class="text-sm text-gray-600 mt-3">Watch all content, no ads, premium unlocked, worldwide access.</p>
+                <p class="text-sm text-gray-600 mt-3 line-clamp-2">Watch all content, no ads, premium unlocked, worldwide access.</p>
                 <div class="flex items-center justify-between mt-4">
                     <div class="flex items-center gap-1 text-yellow-500">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
@@ -577,15 +606,15 @@
 
             <!-- CARD 15 - Sephora Spain -->
             <div class="mod-card p-5">
-                <div class="bg-gradient-to-br from-pink-100 to-rose-50 h-32 rounded-2xl flex items-center justify-center mb-4">
-                    <img src="images/sephora-spain.jpg" alt="Sephora Spain Icon" class="w-20 h-20 object-contain">
+                <div class="icon-container">
+                    <img src="images/sephora-spain.jpg" alt="Sephora Spain Icon">
                 </div>
-                <h3 class="font-bold text-xl text-blue-900">Sephora Spain Mod</h3>
+                <h3 class="font-bold text-xl text-blue-900 mt-4">Sephora Spain Mod</h3>
                 <div class="flex items-center gap-2 mt-1">
                     <span class="text-xs bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Shopping</span>
                     <span class="text-xs text-gray-500">v9.2.3</span>
                 </div>
-                <p class="text-sm text-gray-600 mt-3">Premium beauty content unlocked, exclusive offers.</p>
+                <p class="text-sm text-gray-600 mt-3 line-clamp-2">Premium beauty content unlocked, exclusive offers.</p>
                 <div class="flex items-center justify-between mt-4">
                     <div class="flex items-center gap-1 text-yellow-500">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
@@ -600,15 +629,15 @@
 
             <!-- CARD 16 - Spain Dating -->
             <div class="mod-card p-5">
-                <div class="bg-gradient-to-br from-red-100 to-pink-50 h-32 rounded-2xl flex items-center justify-center mb-4">
-                    <img src="images/spain-dating.jpg" alt="Spain Dating Icon" class="w-20 h-20 object-contain">
+                <div class="icon-container">
+                    <img src="images/spain-dating.jpg" alt="Spain Dating Icon">
                 </div>
-                <h3 class="font-bold text-xl text-blue-900">Spain Dating Mod</h3>
+                <h3 class="font-bold text-xl text-blue-900 mt-4">Spain Dating Mod</h3>
                 <div class="flex items-center gap-2 mt-1">
                     <span class="text-xs bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Social</span>
                     <span class="text-xs text-gray-500">v2.7.4</span>
                 </div>
-                <p class="text-sm text-gray-600 mt-3">Premium features unlocked, unlimited matches, no ads.</p>
+                <p class="text-sm text-gray-600 mt-3 line-clamp-2">Premium features unlocked, unlimited matches, no ads.</p>
                 <div class="flex items-center justify-between mt-4">
                     <div class="flex items-center gap-1 text-yellow-500">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
@@ -623,15 +652,15 @@
 
             <!-- CARD 17 - Spanish Verb Conjugator -->
             <div class="mod-card p-5">
-                <div class="bg-gradient-to-br from-amber-100 to-yellow-50 h-32 rounded-2xl flex items-center justify-center mb-4">
-                    <img src="images/spanish-verb-conjugator.jpg" alt="Spanish Verb Conjugator Icon" class="w-20 h-20 object-contain">
+                <div class="icon-container">
+                    <img src="images/spanish-verb-conjugator.jpg" alt="Spanish Verb Conjugator Icon">
                 </div>
-                <h3 class="font-bold text-xl text-blue-900">Spanish Verb Conjugator</h3>
+                <h3 class="font-bold text-xl text-blue-900 mt-4">Spanish Verb Conjugator</h3>
                 <div class="flex items-center gap-2 mt-1">
                     <span class="text-xs bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Education</span>
                     <span class="text-xs text-gray-500">v1.6.2</span>
                 </div>
-                <p class="text-sm text-gray-600 mt-3">All tenses unlocked, premium features, no ads.</p>
+                <p class="text-sm text-gray-600 mt-3 line-clamp-2">All tenses unlocked, premium features, no ads.</p>
                 <div class="flex items-center justify-between mt-4">
                     <div class="flex items-center gap-1 text-yellow-500">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
@@ -646,15 +675,15 @@
 
             <!-- CARD 18 - Stiker Maker -->
             <div class="mod-card p-5">
-                <div class="bg-gradient-to-br from-lime-100 to-green-50 h-32 rounded-2xl flex items-center justify-center mb-4">
-                    <img src="images/stiker-maker.jpg" alt="Stiker Maker Icon" class="w-20 h-20 object-contain">
+                <div class="icon-container">
+                    <img src="images/stiker-maker.jpg" alt="Stiker Maker Icon">
                 </div>
-                <h3 class="font-bold text-xl text-blue-900">Stiker Maker Mod</h3>
+                <h3 class="font-bold text-xl text-blue-900 mt-4">Stiker Maker Mod</h3>
                 <div class="flex items-center gap-2 mt-1">
                     <span class="text-xs bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Creativity</span>
                     <span class="text-xs text-gray-500">v2.3.8</span>
                 </div>
-                <p class="text-sm text-gray-600 mt-3">All premium stickers unlocked, no watermark, no ads.</p>
+                <p class="text-sm text-gray-600 mt-3 line-clamp-2">All premium stickers unlocked, no watermark, no ads.</p>
                 <div class="flex items-center justify-between mt-4">
                     <div class="flex items-center gap-1 text-yellow-500">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
@@ -669,15 +698,15 @@
 
             <!-- CARD 19 - True Caller Spam Blocker -->
             <div class="mod-card p-5">
-                <div class="bg-gradient-to-br from-blue-100 to-sky-50 h-32 rounded-2xl flex items-center justify-center mb-4">
-                    <img src="images/truecaller.jpg" alt="True Caller Icon" class="w-20 h-20 object-contain">
+                <div class="icon-container">
+                    <img src="images/truecaller.jpg" alt="True Caller Icon">
                 </div>
-                <h3 class="font-bold text-xl text-blue-900">True Caller Spam Blocker</h3>
+                <h3 class="font-bold text-xl text-blue-900 mt-4">True Caller Spam Blocker</h3>
                 <div class="flex items-center gap-2 mt-1">
                     <span class="text-xs bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Communication</span>
                     <span class="text-xs text-gray-500">v12.5.7</span>
                 </div>
-                <p class="text-sm text-gray-600 mt-3">Premium features unlocked, spam blocker, no ads.</p>
+                <p class="text-sm text-gray-600 mt-3 line-clamp-2">Premium features unlocked, spam blocker, no ads.</p>
                 <div class="flex items-center justify-between mt-4">
                     <div class="flex items-center gap-1 text-yellow-500">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
@@ -692,15 +721,15 @@
 
             <!-- CARD 20 - Zigzag Games -->
             <div class="mod-card p-5">
-                <div class="bg-gradient-to-br from-emerald-100 to-green-50 h-32 rounded-2xl flex items-center justify-center mb-4">
-                    <img src="images/zigzag.jpg" alt="Zigzag Games Icon" class="w-20 h-20 object-contain">
+                <div class="icon-container">
+                    <img src="images/zigzag.jpg" alt="Zigzag Games Icon">
                 </div>
-                <h3 class="font-bold text-xl text-blue-900">Zigzag Games Mod</h3>
+                <h3 class="font-bold text-xl text-blue-900 mt-4">Zigzag Games Mod</h3>
                 <div class="flex items-center gap-2 mt-1">
                     <span class="text-xs bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Game</span>
                     <span class="text-xs text-gray-500">v2.1.4</span>
                 </div>
-                <p class="text-sm text-gray-600 mt-3">All games unlocked, premium features, no ads.</p>
+                <p class="text-sm text-gray-600 mt-3 line-clamp-2">All games unlocked, premium features, no ads.</p>
                 <div class="flex items-center justify-between mt-4">
                     <div class="flex items-center gap-1 text-yellow-500">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
